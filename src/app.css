@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+    @apply bg-primary h-dvh w-dvw flex justify-center items-center;    
+}
