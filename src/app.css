@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 main {
-    @apply bg-primary h-dvh w-dvw flex justify-center items-center;    
+    @apply bg-info h-dvh w-dvw flex flex-col justify-center items-center;    
 }
