@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { onDestroy } from "svelte";
+    import { onDestroy, onMount } from "svelte";
     import { Result } from "../constant/app";
     import Countdown from "$lib/countdown.svelte";
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
 
-    $: playerName = $page.data.name;
+    $: playerName = "";
 
     let results: Array<Result> = [];
     let currentResult: Result | null;
@@ -75,6 +75,13 @@
         radomGeneratorInterval = generateRandomInterval();
         currentResult = null;
     }
+
+    onMount(() => {
+        const _name = $page.url.searchParams.get('name');
+        if(_name) {
+            playerName = _name;
+        }
+    })
     
     onDestroy(() => {
         clearInterval(radomGeneratorInterval);
