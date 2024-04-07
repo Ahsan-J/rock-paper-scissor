@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { base } from '$app/paths';
+
     type MenuType = {
         label: string,
         link: string
@@ -28,10 +30,10 @@
             </div>
             <div class='flex flex-row justify-between gap-2'>
                 <a href="https://github.com/Ahsan-J">
-                    <img class="w-8 h-8" src="/github.svg" alt="Github"/>
+                    <img class="w-8 h-8" src={`${base}/github.svg`} alt="Github"/>
                 </a>
                 <a href="https://linkedin.com/in/ahsan-j">
-                    <img class="w-8 h-8" src="/linkedin.svg" alt="Linkedin"/>
+                    <img class="w-8 h-8" src={`${base}/linkedin.svg`} alt="Linkedin"/>
                 </a>
             </div>
         </div>
