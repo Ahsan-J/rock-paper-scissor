@@ -4,6 +4,7 @@
     import Countdown from "$lib/countdown.svelte";
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
+    import { base } from '$app/paths';
 
     $: playerName = "";
 
@@ -36,7 +37,7 @@
         if (e.target instanceof HTMLFormElement) {
             e.preventDefault();
             const formData = new FormData(e.target);
-            goto(`/?name=${formData.get("name") as string}`) 
+            goto(`${base}/?name=${formData.get("name") as string}`) 
         }
     };
 
