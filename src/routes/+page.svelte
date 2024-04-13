@@ -37,7 +37,8 @@
         if (e.target instanceof HTMLFormElement) {
             e.preventDefault();
             const formData = new FormData(e.target);
-            goto(`${base}/?name=${formData.get("name") as string}`) 
+            playerName = formData.get("name") as string
+            goto(`${base}/?name=${playerName}`) 
         }
     };
 
